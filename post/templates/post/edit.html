@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="{% url 'edit' post_obj.post_id %}" method="POST">
+        {% csrf_token %}
+        <textarea name="textarea" cols="30" rows="10">{{ post_obj.text }}</textarea><br><br>
+        <button>Update</button>
+    </form>
+</body>
+</html>
